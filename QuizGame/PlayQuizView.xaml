@@ -25,7 +25,7 @@
                    />
 
         <StackPanel Grid.Row="2" Margin="0, 20">
-            
+
             <Button x:Name="Answer1Button" Content="{Binding CurrentQuestion.Answers[0]}"
                     Height="40" Margin="0,5"
                     Click="AnswerButton_Click" Tag="0"/>
@@ -42,10 +42,10 @@
 
         </StackPanel>
 
-        <Button Grid.Row="3" Content="Nästa fråga"
-                Width="150" Height="40"
-                HorizontalAlignment="Center"
-                Margin="0, 20" Click="NextQuestion_Click"/>
+
+        <TextBlock Grid.Row="3" Text="{Binding ScoreText}"
+                   FontWeight="Bold" FontSize="18"
+                   HorizontalAlignment="Center" Margin="0, 10"/>
 
     </Grid>
 </UserControl>
