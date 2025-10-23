@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="QuizGame.PlayQuizView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:QuizGame"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="{Binding Quiz.Title}" FontSize="26" FontWeight="Bold"
+                   HorizontalAlignment="Center" Margin="0, 0, 0, 10"
+                   />
+
+        <TextBlock Grid.Row="1" Text="{Binding CurrentQuestion.Statement}"
+                   FontSize="18" TextWrapping="Wrap"
+                   HorizontalAlignment="Center"
+                   Margin="0, 10"
+                   />
+
+        <StackPanel Grid.Row="2" Margin="0, 20">
+            
+            <Button x:Name="Answer1Button" Content="{Binding CurrentQuestion.Answers[0]}"
+                    Height="40" Margin="0,5"
+                    Click="AnswerButton_Click" Tag="0"/>
+
+            <Button x:Name="Answer2Button" Content="{Binding CurrentQuestion.Answers[1]}"
+                    Height="40" Margin="0,5"
+                    Click="AnswerButton_Click" Tag="1"
+                    />
+
+            <Button x:Name="Answer3Button" Content="{Binding CurrentQuestion.Answers[2]}" 
+                    Height="40" Margin="0,5"
+                    Click="AnswerButton_Click" Tag="2"
+                    />
+
+        </StackPanel>
+
+        <Button Grid.Row="3" Content="Nästa fråga"
+                Width="150" Height="40"
+                HorizontalAlignment="Center"
+                Margin="0, 20" Click="NextQuestion_Click"/>
+
+    </Grid>
+</UserControl>
